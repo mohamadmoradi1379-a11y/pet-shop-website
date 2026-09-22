@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-vazir), ui-sans-serif, system-ui, sans-serif;
+  --color-dk-red: #ef4056;
+  --color-dk-blue: #3f51b5;
+  --color-dk-green: #00a049;
+  --color-dk-orange: #f9a825;
+  --color-dk-gray: #f0f0f1;
+  --color-dk-text: #3d4152;
+  --color-dk-text-light: #81858b;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-vazir), Tahoma, sans-serif;
+  background-color: #f0f0f1;
+  color: #3d4152;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Countdown digits */
+.countdown-digit {
+  background: white;
+  color: #3d4152;
+  font-weight: 800;
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-size: 14px;
+  min-width: 28px;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Skeleton loading */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
