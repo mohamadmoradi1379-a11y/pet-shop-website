@@ -1,15 +1,17 @@
 "use client";
 import { X, ChevronDown } from "lucide-react";
 
+export type FilterState = {
+  onlyAvailable: boolean;
+  amazingOnly: boolean;
+  freeShipping: boolean;
+};
+
 interface FilterDrawerProps {
   isOpen: boolean;
   onClose: () => void;
-  filters: {
-    onlyAvailable: boolean;
-    amazingOnly: boolean;
-    freeShipping: boolean;
-  };
-  setFilters: (filters: any) => void;
+  filters: FilterState;
+  setFilters: (filters: FilterState) => void;
 }
 
 export default function FilterDrawer({ isOpen, onClose, filters, setFilters }: FilterDrawerProps) {

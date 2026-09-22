@@ -36,7 +36,7 @@ export default function HomePage() {
 
       {/* Wide Ad Banner */}
       <WideBanner
-        image="https://images.pexels.com/photos/27175967/pexels-photo-27175967.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200"
+        image="/images/banner2.jpg"
         alt="تخفیف ویژه لوازم حیوانات خانگی"
       />
 
@@ -54,7 +54,7 @@ export default function HomePage() {
 
       {/* Wide Banner */}
       <WideBanner
-        image="https://images.pexels.com/photos/10330689/pexels-photo-10330689.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200"
+        image="/images/banner3.jpg"
         alt="جشنواره فصلی فروش"
       />
 

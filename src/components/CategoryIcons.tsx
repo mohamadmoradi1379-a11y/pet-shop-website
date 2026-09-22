@@ -1,78 +1,19 @@
 import Link from "next/link";
 
+const buildHref = (cat: string, sub?: string) =>
+  sub
+    ? `/search?cat=${encodeURIComponent(cat)}&sub=${encodeURIComponent(sub)}`
+    : `/search?cat=${encodeURIComponent(cat)}`;
+
 const categories = [
-  {
-    id: 1,
-    name: "سوپرمارکت حیوانات",
-    icon: "🛒",
-    bgColor: "bg-green-50",
-    badge: "ارسال رایگان",
-    badgeColor: "bg-green-500",
-    href: "/search",
-  },
-  {
-    id: 2,
-    name: "غذای خشک",
-    icon: "🥫",
-    bgColor: "bg-orange-50",
-    badge: "کف قیمت",
-    badgeColor: "bg-orange-500",
-    href: "/search?sub=غذای+خشک+سگ",
-  },
-  {
-    id: 3,
-    name: "لوازم بهداشتی",
-    icon: "🧴",
-    bgColor: "bg-pink-50",
-    badge: null,
-    badgeColor: "",
-    href: "/search?sub=لوازم+بهداشتی+سگ",
-  },
-  {
-    id: 4,
-    name: "اسباب‌بازی",
-    icon: "🎾",
-    bgColor: "bg-yellow-50",
-    badge: null,
-    badgeColor: "",
-    href: "/search?sub=اسباب‌بازی+سگ",
-  },
-  {
-    id: 5,
-    name: "قلاده و تسمه",
-    icon: "🐕",
-    bgColor: "bg-blue-50",
-    badge: null,
-    badgeColor: "",
-    href: "/search?cat=dogs&sub=قلاده+و+بند",
-  },
-  {
-    id: 6,
-    name: "تخت و جای خواب",
-    icon: "🛏️",
-    bgColor: "bg-purple-50",
-    badge: null,
-    badgeColor: "",
-    href: "/search?cat=cats&sub=جای+خواب+و+اسکرچر",
-  },
-  {
-    id: 7,
-    name: "آکواریوم",
-    icon: "🐠",
-    bgColor: "bg-cyan-50",
-    badge: null,
-    badgeColor: "",
-    href: "/search?cat=aquatics",
-  },
-  {
-    id: 8,
-    name: "پرندگان",
-    icon: "🦜",
-    bgColor: "bg-lime-50",
-    badge: null,
-    badgeColor: "",
-    href: "/search?cat=birds",
-  },
+  { id: 1, name: "سوپرمارکت حیوانات", icon: "🛒", bgColor: "bg-green-50", badge: "ارسال رایگان", badgeColor: "bg-green-500", href: "/search" },
+  { id: 2, name: "غذای خشک", icon: "🥫", bgColor: "bg-orange-50", badge: "کف قیمت", badgeColor: "bg-orange-500", href: buildHref("dogs", "غذای خشک سگ") },
+  { id: 3, name: "لوازم بهداشتی", icon: "🧴", bgColor: "bg-pink-50", badge: null, badgeColor: "", href: buildHref("dogs", "لوازم بهداشتی سگ") },
+  { id: 4, name: "اسباب‌بازی", icon: "🎾", bgColor: "bg-yellow-50", badge: null, badgeColor: "", href: buildHref("dogs", "اسباب‌بازی سگ") },
+  { id: 5, name: "قلاده و تسمه", icon: "🐕", bgColor: "bg-blue-50", badge: null, badgeColor: "", href: buildHref("dogs", "قلاده و بند") },
+  { id: 6, name: "تخت و جای خواب", icon: "🛏️", bgColor: "bg-purple-50", badge: null, badgeColor: "", href: buildHref("cats", "جای خواب و اسکرچر") },
+  { id: 7, name: "آکواریوم", icon: "🐠", bgColor: "bg-cyan-50", badge: null, badgeColor: "", href: buildHref("aquatics", "آکواریوم") },
+  { id: 8, name: "پرندگان", icon: "🦜", bgColor: "bg-lime-50", badge: null, badgeColor: "", href: buildHref("birds") },
 ];
 
 export default function CategoryIcons() {
@@ -99,7 +40,7 @@ export default function CategoryIcons() {
                 </span>
               )}
             </div>
-            <span className="text-[10px] font-medium text-[#3d4152] text-center leading-4 mt-1">
+            <span className="text-[10px] font-medium text-[#3d4152] text-center leading-4">
               {cat.name}
             </span>
           </Link>

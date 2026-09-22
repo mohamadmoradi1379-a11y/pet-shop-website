@@ -1,5 +1,5 @@
 "use client";
-import { Home, LayoutGrid, ShoppingCart, MessageCircle, User } from "lucide-react";
+import { Home, LayoutGrid, ShoppingCart, Search, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -7,7 +7,7 @@ const navItems = [
   { icon: Home, label: "خانه", href: "/" },
   { icon: LayoutGrid, label: "دسته‌بندی", href: "/category" },
   { icon: ShoppingCart, label: "سبد خرید", href: "/cart" },
-  { icon: MessageCircle, label: "پرس‌وجو", href: "/explore" },
+  { icon: Search, label: "جستجو", href: "/search" },
   { icon: User, label: "دیجی‌پت من", href: "/profile" },
 ];
 
